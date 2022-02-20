@@ -1,0 +1,119 @@
+:root {
+    /* text */
+--Pale-Violet: hsl(276, 100%, 81%); /*sub-heading at the top of the app UI*/
+--Moderate-Violet: hsl(276, 55%, 52%); /*chat-on-the-left */
+--Desaturated-Dark-Violet: hsl(271, 15%, 43%); /*chat-on-the-right*/
+--Grayish-Blue: hsl(206, 6%, 79%); /*placeholder text*/
+--Very-Dark-Desaturated-Violet: hsl(271, 36%, 24%); /*main heading*/
+--Dark-Grayish-Violet: hsl(270, 7%, 64%); /*paragraph*/
+
+/* Gradients */
+
+--Light-Magenta: hsl(293, 100%, 63%);
+--Light-Violet: hsl(264, 100%, 61%);
+
+/* Secondary */
+
+--White: hsl(0, 0%, 100%);
+--Light-Grayish-Violet: hsl(270, 20%, 96%); /*app background*/
+--Very-Dark-Desaturated-Violet: hsl(271, 36%, 24%); /*submit button background*/
+--Very-Light-Magenta: hsl(289, 100%, 72%); /*radio button outline*/
+
+}
+
+body {
+    font-family: "Rubik";
+    font-size: 16px;
+    margin:  auto;
+    justify-content: center;
+   
+}
+
+
+
+#container {
+    display: grid; 
+    grid-template-columns: 0.5fr 1fr 0.5fr; 
+    gap: 0px 0px;
+    box-sizing: border-box;
+    max-width: 1440px;
+    margin: auto;
+}
+
+.section-left {
+    background-image:linear-gradient(to bottom left, var(--Light-Magenta), var(--Light-Violet));
+    border-radius: 0px 0px 180px 100px;
+    }
+
+.section-right {
+    background-color: var(--Light-Grayish-Violet);
+    border-radius: 180px 30px 0px 0px;
+}
+
+.section-center {
+    display: flex;
+    align-items: center;
+}
+
+.center-mobile {
+    display: grid;
+    grid-template-rows: -1rem repeat(10, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 0;
+    border: 1px solid;
+    padding: 5px;
+}
+
+.box {
+    border: 1px solid;
+}
+
+.mobile-first {
+    grid-area: 1 / 1 / span 1 / span 1;
+    font-size: 6px !important; 
+}
+
+
+.mobile-first_info_img {
+    width: 24px;
+    border-radius: 50%;
+    height: 24px;
+}
+   
+
+.mobile-second {
+    font-size: 4px;
+    
+}
+
+.mobile-third {
+    
+}
+
+.mobile-fourth {
+    text-align: right;
+}
+
+.mobile-fourth-img {
+    max-width: 22px;
+    width: 100%;
+}
+
+.mobile-fith {
+    text-align: right;
+}
+
+.mobile-sixth {
+    text-align: right;
+}
+
+.center-info {
+    /* max-width: 300px; */
+}
+
+.box {
+    font-size: 4px;
+}
+
+
+
