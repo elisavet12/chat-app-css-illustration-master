@@ -29,35 +29,50 @@ body {
    
 }
 
-
-
 #container {
     display: grid; 
-    grid-template-columns: 0.5fr 1fr 0.5fr; 
     gap: 0px 0px;
     box-sizing: border-box;
     max-width: 1440px;
     margin: auto;
     height: 100vh;
-    /* background-color: var(--Light-Grayish-Violet); */
     background-color: var(--White);
+    padding: 8rem;
 }
 
-.section-left {
+#container::before {
     background-image:linear-gradient(to bottom left, var(--Light-Magenta), var(--Light-Violet));
-    border-radius: 0px 0px 180px 100px;
-    }
+    border-radius: 0px 0px 280px 0px;
+    content: "";
+    height: 100%;
+    max-height: 85vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 26%;
+}
 
-.section-right {
+#container::after {
     background-color: var(--Light-Grayish-Violet);
-    border-radius: 180px 30px 0px 0px;
+    border-radius: 280px 0px 0px 0px;
+    content: "";
+    height: 80%;
+    height: 100%;
+    max-height: 85vh;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 26%;
 }
 
 .section-center {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
-    justify-content: space-between
+    justify-content: space-between;
+    justify-items: center;
 }
+
 
 .center-mobile {
     display: grid;
@@ -66,13 +81,11 @@ body {
     row-gap: 4px;
     border: 5px solid var(--White);
     border-radius: 18px;
-    /* padding: 5px; */
     padding: 5px;
     width: 140px;
     height: 300px;
     background-color: var(--Light-Grayish-Violet);
     position: relative;
-    right: 40px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
 }
 
@@ -81,7 +94,6 @@ body {
 }
 
 .box-border {
-    /* border: 1px solid; */
     border-radius: 5px;
     width: fit-content;
     display: inline-block;
@@ -89,7 +101,8 @@ body {
 }
 
 .chat {
-    width: 22ch;
+    max-width: 22ch;
+    width: auto;
     font-size: 6px;
     padding: 0px 2px;
 }
@@ -100,11 +113,10 @@ body {
 
 .mobile-first {
     display: flex;
+    align-items: center;
     flex-direction: column;
     font-size: 6px !important; 
     background-image:linear-gradient(to bottom left, var(--Light-Magenta), var(--Light-Violet));
-    display: flex;
-    align-items: flex-start;
     justify-content: space-around;
     border-radius: 8px;
     color: var(--White);
@@ -116,7 +128,6 @@ body {
     background-color: var(--White);
     margin: auto;
     width: 60%;
-    /* width: 125px; */
     height: 8px;
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
@@ -126,6 +137,23 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
+    gap: 0.5rem;
+}
+
+.test {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.angle-left-img {
+    width: 8px;
+    height: 8px;
+}
+
+.dots-img {
+    width: 8px;
+    height: 8px;
 }
 
 .mobile-first_info_name {
@@ -136,14 +164,13 @@ body {
     opacity: 0.5;
 }
 
-
 .mobile-img {
-    width: 24px;
+    width: 18px;
     border-radius: 50%;
-    height: 24px;
+    height: 18px;
+    border: 1px solid var(--White);
 }
    
-
 .mobile-second {
     font-size: 4px;
     color: var(--Moderate-Violet);
@@ -156,8 +183,6 @@ body {
 .mobile-fourth {
     text-align: right;
 }
-
-
 
 .mobile-fourth-img {
     max-width: 22px;
@@ -198,11 +223,8 @@ body {
     padding:2px 0px 2px 10px;
 }
 
-
-
 .time {
     opacity: 0.7;
-
 }
 
 .price {
@@ -222,6 +244,14 @@ body {
     height: 12px;
     border-radius: 50%;
     background-color:var(--Very-Dark-Desaturated-Violet) ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.submit {
+    width: 6px;
+    height: 6px;
 }
 
 .box-info {
@@ -236,7 +266,10 @@ body {
 }
 
 .center-info {
-    
+    position: relative;
+    right: 70px;
+    z-index: 1;
+    justify-self: left;
 }
 
 .center-info-title {
@@ -248,5 +281,51 @@ body {
     color: var(--Dark-Grayish-Violet);
 }
 
+@media only screen and (max-width: 1124px) {
 
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .section-center {
+        grid-template-columns: 1fr;
+        z-index: 1;
+    }
+
+    .center-info {
+        right: 0;
+        justify-self: center;
+    }
+
+    .center-info-title {
+        text-align: center;
+    }
+
+    .center-info-excerpt {
+        width: 26ch;
+        text-align: center;
+    }
+
+    @media only screen and (max-width: 625px) {
+    
+    #container {
+            padding: 2rem;
+        }
+        
+    #container::before {
+            max-height: 50vh;
+            width: 40%;
+    }
+
+    #container::after {
+        max-height: 50vh;
+        width: 40%;
+    }
+
+    .center-info-title {
+        font-size: 34px;
+    }
+}
+
+}
 
